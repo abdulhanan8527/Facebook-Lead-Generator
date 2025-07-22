@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Job Scraper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Facebook Job Scraper</h1>
+      <div class="theme-switch">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider round"></span>
+        </label>
+        <span>Dark Mode</span>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="login-section">
+        <h2>Facebook Authentication</h2>
+        <div class="auth-options">
+          <button id="cookieImportBtn">Import Cookies</button>
+          <span>OR</span>
+          <div class="login-form">
+            <input type="text" id="fbEmail" placeholder="Facebook Email">
+            <input type="password" id="fbPassword" placeholder="Password">
+            <button id="loginBtn">Login</button>
+          </div>
+        </div>
+        <div id="loginStatus">Status: Not logged in</div>
+      </div>
+
+      <div class="target-section">
+        <h2>Job Source</h2>
+        <div class="source-input">
+          <input type="text" id="targetUrl" placeholder="Enter Facebook Group/Search/Post URL">
+          <select id="sourceType">
+            <option value="group">Group Members</option>
+            <option value="search">Search Results</option>
+            <option value="post">Post Comments</option>
+          </select>
+        </div>
+        <div class="options">
+          <label>
+            Limit:
+            <input type="number" id="jobLimit" value="50" min="1">
+          </label>
+          <button id="startScrapingBtn">Start Scraping</button>
+        </div>
+      </div>
+
+      <div class="results-section">
+        <h2>Results</h2>
+        <div class="results-header">
+          <span id="jobCount">0 profiles found</span>
+          <div class="export-buttons">
+            <button id="exportCSVBtn">Export CSV</button>
+            <button id="exportExcelBtn">Export Excel</button>
+          </div>
+        </div>
+        <div class="logs" id="scrapingLogs"></div>
+        <div class="preview-table-container">
+          <table id="previewTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Profile Link</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

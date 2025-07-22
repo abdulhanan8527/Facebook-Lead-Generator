@@ -1,0 +1,31 @@
+{
+  "name": "facebook-job-scraper",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "description": "Scrapes Facebook job post leads and exports to Excel.",
+  "author": "Abdul Hanan",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "chrome-launcher": "^0.15.2",
+    "csv-writer": "^1.6.0",
+    "puppeteer-core": "^21.11.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.example.facebookjobscraper",
+    "productName": "Facebook Job Scraper",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

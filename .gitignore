@@ -1,0 +1,9 @@
+node_modules
+user_data
+/build
+*.apk
+*.zip
+*.mp4
+*.db
+*.log
+
